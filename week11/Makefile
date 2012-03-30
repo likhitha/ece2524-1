@@ -19,5 +19,5 @@ clean:
 	-rm *.o *.d *~
 
 archive:
-	tar -cvf theprogram.tar ${SRC}
+	tar -cvf archive.tar ${SRC}
 
