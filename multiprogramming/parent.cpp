@@ -8,7 +8,7 @@ int main()
     if(fork() == 0) 
     { 
 	// this is the child process 
-	execl("./child", "child", NULL);
+	execl("./child", "child", "red", "white", "blue", NULL);
 	exit(0); // shouldn't ever get here
     }
      
