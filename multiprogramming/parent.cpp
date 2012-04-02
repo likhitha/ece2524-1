@@ -17,7 +17,7 @@ int main()
     cout << "Process[" << getpid() << "]: Parent executing..." << endl;
     sleep(6); 
    
-    if(kill(pid, SIGKILL) == 0)
+    if(kill(pid, SIGTERM) == 0)
 	cout << "Process[" << getpid() << "]: Parent terminated child process..."
 	     << endl;
    

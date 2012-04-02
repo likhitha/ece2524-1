@@ -2,12 +2,21 @@
 #include <sys/wait.h>
 #include <iostream>
 using namespace std;
+
+void signal_handler(int signo)
+{
+    if (signo == SIGTERM)
+	cerr << "Process[" << getpid() << "]: Child received SIGTERM." << endl;
+}
+
 int main(int argc, char *argv[])
 {
-    int i;
-   
     cout << "Process[" << getpid() << "]: Child executing..." << endl;
-    for (i=0; i<argc; i++)      // print arguments
+    if (signal(SIGTERM, signal_handler) == SIG_ERR)
+	cerr << "Can't catch SIGTERM" << endl;
+    if (signal(SIGKILL, signal_handler) == SIG_ERR)
+	cerr << "Can't catch SIGKILL" << endl;
+    for (int i=0; i<argc; i++)      // print arguments
     {
 	cout << argv[i] << endl;
     }

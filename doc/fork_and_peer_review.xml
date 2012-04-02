@@ -9,6 +9,7 @@
       </listitem>
       <listitem><para>Clone the forked repo from your own github account to your local machine.</para></listitem>
     <listitem><para>Create a file named <filename>COMMENTS</filename> in the base directory of the repository.  Review the source code in the forked repo.  Think about it in terms of <ulink url="http://catb.org/~esr/writings/taoup/html/philosophychapter.html">Unix Philosophy</ulink> as defined by Raymond.  If you see areas for improvement, make a note of them in <filename>COMMENTS</filename>.  If you can see a way to improve the code yourself, by making it more modular, or more general, make the appropriate changes, commit them to your local repository, push back to your github account and then initiate a "Pull Request" by clicking the appropriate button on the github page for the forked repository.</para></listitem>
+    <listitem><para>Post the username and repository name, along with your comments, in the "Peer Review" topic on the Scholar forum.</para></listitem>
     <listitem><para>When you receive a pull request from a colleague, review the changes and the comments.  If you feel the contribution improves your project then go ahead and merge in the changes.</para></listitem>
     </orderedlist>
   </para>
