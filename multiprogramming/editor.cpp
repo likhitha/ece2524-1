@@ -5,7 +5,6 @@
 #include <iostream>
 #include <string>
 #include <readline/readline.h>
-#include <readline/history.h>
 #include <boost/algorithm/string.hpp>
 
 
@@ -24,7 +23,7 @@ std::string get_string_from_user(const char* prompt)
 int main(int argc, const char* argv[])
 {
     bool verbose = true;
-    string filename = get_string_from_user("Enter a file name: ");
+    string filename = get_string_from_user("Enter a file name to edit: ");
 
     string command("$EDITOR ");
     command.append(filename);
