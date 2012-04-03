@@ -1,0 +1,3 @@
+editor:
+you will need to have the EDITOR environment variable set. e.g.
+export EDITOR=nano
