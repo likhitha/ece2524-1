@@ -19,6 +19,19 @@ std::string get_string_from_user(const char* prompt)
     return userstring;
 }
 
+void file_copy(std::string filename, int fd)
+{
+    /* copy the contents of a file given by filename to a file descriptor fd */
+    char *mystring = NULL;
+    size_t num_bytes = 0;
+
+    FILE* input = fopen(filename.c_str(), "r");
+    FILE* towc = fdopen(fd, "w");
+    while (getline(&mystring, &num_bytes, input) > 0)
+	fputs(mystring, towc);
+    fclose(towc);
+    fclose(input);
+}
 
 int main(int argc, const char* argv[])
 {
@@ -72,18 +85,14 @@ int main(int argc, const char* argv[])
 	close(fd[1]);
 	close(fd[2]);
 
-	FILE* input = fopen(filename.c_str(), "r");
-	FILE* towc = fdopen(fd[3], "w");
-	while (getline(&mystring, &num_bytes, input) > 0)
-	    fputs(mystring, towc);
-	fclose(towc);
-	fclose(input);
+	file_copy(filename,fd[3]);
 
 	FILE* fromwc = fdopen(fd[0], "r");
 	getline(&mystring, &num_bytes, fromwc);
 	int word_count = atoi(mystring);
 	cout << "File " << filename << " contains " << word_count << " words." << endl;
-
+	fclose(fromwc);
+	close(fd[0]);
     }
     return EXIT_SUCCESS;
 }
