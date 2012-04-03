@@ -66,7 +66,7 @@ int main(int argc, const char* argv[])
 	FILE* input = fopen(filename.c_str(), "r");
 	FILE* towc = fdopen(fd[3], "w");
 	while (getline(&mystring, &num_bytes, input) > 0)
-	    fprintf(towc, mystring);
+	    fputs(mystring, towc);
 	fclose(towc);
 	fclose(input);
 
