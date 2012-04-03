@@ -23,7 +23,6 @@ std::string get_string_from_user(const char* prompt)
 int main(int argc, const char* argv[])
 {
     bool verbose = true;
-    string filename = get_string_from_user("Enter a file name to edit: ");
 
     char *pEditor;
     pEditor = getenv("EDITOR");
@@ -32,6 +31,8 @@ int main(int argc, const char* argv[])
 	cerr << "EDITOR environment variable not set." << endl;
 	exit(1);
     };
+
+    string filename = get_string_from_user("Enter a file name to edit: ");
 
     string command("$EDITOR ");
     command.append(filename);
