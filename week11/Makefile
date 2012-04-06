@@ -20,4 +20,6 @@ clean:
 
 archive:
 	tar -cvf archive.tar ${SRC}
+	tar -cvzf archive.tar.gz *.cpp *.h Makefile README	
+
 
