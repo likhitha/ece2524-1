@@ -19,5 +19,9 @@ clean:
 	-rm *.o *.d *~
 
 archive:
+<<<<<<< HEAD
 	tar -cvf archive.tar ${SRC}
+=======
+	tar czf project.tar.gz Makefile *.h *.cpp
+>>>>>>> upstream/master
 
